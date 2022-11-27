@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EducationApp.View.DetailPage"
+             xmlns:viewmodel="clr-namespace:EducationApp.ViewModel"
+             x:DataType="viewmodel:CourseDetailsViewModel"
+             Title="Course Detail">
+    <VerticalStackLayout Spacing="4">
+
+        <Grid ZIndex="1" ColumnDefinitions="*, Auto, *"
+              Margin="0"
+              Padding="0"
+              RowDefinitions="104, Auto, Auto">
+
+            <Frame Grid.ColumnSpan="3" BackgroundColor="Orange"
+               BorderColor="Orange" 
+               CornerRadius="0"
+               HeightRequest="104">
+            </Frame>
+
+            <Frame
+                Grid.ColumnSpan="3"
+                HeightRequest="50"
+              BorderColor="Orange"
+               Margin="0,104,0,0"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Padding="20,6">
+
+                <Label Text="{Binding Course.SubTitle}" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="30"
+               FontAttributes="Bold"
+               TextColor="Orange">
+
+                </Label>
+
+            </Frame>
+
+        </Grid>
+
+
+        <!--<Label Text="{Binding Course.SubTitle}" 
+               HorizontalOptions="Center"
+               FontSize="36"
+               FontAttributes="Bold"
+               TextColor="Orange"></Label>-->
+
+        <Image Source="{Binding Course.Image}" HorizontalOptions="CenterAndExpand"></Image>
+
+        <Label FontSize="Subtitle" Text="{Binding Course.Description}"
+                       HorizontalTextAlignment="Center" />
+    </VerticalStackLayout>
+</ContentPage>
